@@ -1,20 +1,20 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    <div class="container">
+    <div class="container post">
         <div class="row my-4">
             <div class="col-lg-8">
-                <h1 class="mb-4">{{ $post->title }}</h1>
-                <a href="/dashboard/posts" class="btn btn-success rounded-0">
+                <h1 class="mb-4 pt-2 title">{{ $post->title }}</h1>
+                <a href="/dashboard/posts" class="btn btn-success rounded-0 py-1">
                     <span data-feather="arrow-left"></span> Back to all my posts
                 </a>
-                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning rounded-0">
+                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning rounded-0 py-1">
                     <span data-feather="edit"></span> Edit
                 </a>
                 <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
                     @method('delete')
                     @csrf
-                    <button class="btn btn-danger rounded-0" onclick="return confirm('Are you sure?')">
+                    <button class="btn btn-danger rounded-0 py-1" onclick="return confirm('Are you sure?')">
                       <span data-feather="x-circle"></span> Delete
                     </button>
                 </form>

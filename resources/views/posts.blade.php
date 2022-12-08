@@ -1,10 +1,10 @@
 
 @extends('layouts.main')
 @section('container')
-    <h1 class="">{{ $title }}</h1>
+    <h1 class="title">{{ $title }}</h1>
     <hr>
-    <div class="row justify-content-center mt-4 mb-2">
-        <div class="col-md-12">
+    <div class="row justify-content-center mt-4 mb-1">
+        <div class="col-md-9">
             <form action="/posts">
                 @if (request('category'))
                     <input type="hidden" name="category" value="{{ request('category') }}">    
@@ -31,17 +31,19 @@
             @endif            
             <div class="card-body text-center text-dark py-4">
                 <h3 class="card-title"><a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title }}</a></h3>
-                <p>
-                    <small> By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in <a href="/posts?category={{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
-                    </small>           
-                </p>
-                <p class="card-text">{{ $posts[0]->excerpt }}</p>
-                <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-dark rounded-0">Read more</a>
-                <hr>
+                <div class="content">
+                    <p>
+                        <small> By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in <a href="/posts?category={{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                        </small>           
+                    </p>
+                    <p class="card-text">{{ $posts[0]->excerpt }}</p>
+                    <a href="/posts/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-dark rounded-0 py-1">Read more</a>
+                    <hr>
+                </div>
             </div>
         </div>
     
-    <div class="container">
+    <div class="container posts">
         <div class="row">
             @foreach ($posts->skip(1) as $post)
                 <div class="col-md-4 mb-4">
@@ -61,7 +63,7 @@
                                 </small>           
                             </p>
                             <p class="card-text fs-6">{{ $post->excerpt }}</p>
-                            <a href="/posts/{{ $post->slug }}" class="btn btn-dark rounded-0 shadow-sm">Read More</a>
+                            <a href="/posts/{{ $post->slug }}" class="btn btn-dark rounded-0 shadow-sm py-1">Read More</a>
                             <hr>
                         </div>
                     </div>

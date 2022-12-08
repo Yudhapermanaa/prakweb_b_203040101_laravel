@@ -1,8 +1,8 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h2 class="mt-4">My Posts</h2>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 mb-3 border-bottom">
+      <h2 class="mt-4 title">My Posts</h2>
     </div>
 
     @if (session()->has('success'))
@@ -11,9 +11,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
+    <div class="col-lg-8 mb-3 mt-4">
+        <form action="">
+            <div class="input-group">
+                <input type="text" class="form-control rounded-0" placeholder="Search..." name="search" value="{{ request('search') }}">
+                <button class="btn btn-dark rounded-0" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </form>
+    </div>
+    
 
-    <div class="table-responsive col-lg-8">
-      <a href="/dashboard/posts/create" class="btn btn-primary mb-3 rounded-0">Create new post</a>
+    <div class="table-responsive col-lg-8 my-posts">
+      <a href="/dashboard/posts/create" class="btn btn-primary mb-2 rounded-0 py-1">Create new post</a>
       <table class="table table-striped table-sm">
         <thead>
           <tr>

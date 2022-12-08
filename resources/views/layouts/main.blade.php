@@ -15,18 +15,60 @@
     {{-- My Styles CSS --}}
     <link rel="stylesheet" href="/css/style.css">
     
-    <title>WPU Blog | {{ $title }}</title>
+    {{-- Font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth&display=swap" rel="stylesheet">
+    <style>
+        .card-title, .categories {
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+        .btn, .content ,.posts, .post, .input-group, .login, .register{
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+        .nav-item, .dropdown-item {
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-size: 15.5px;
+            font-weight: 500;
+        }
+        .navbar-brand {
+            font-family: 'Amaranth', sans-serif;
+            font-weight: 600;
+        }
+        .title {
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+        .banner-image {
+            background-image: url(img/background-home.jpg);
+            background-size: cover;
+        }
+    </style>
+
+    <title>YUDHA Blog | {{ $title }}</title>
 </head>
 
 <body>
     
     @include('partials.navbar')
 
-    <div class="container mt-4">
+    <div class="container" style="margin-top: 110px;">
         @yield('container')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        var nav = document.querySelector('nav');
+    
+        window.addEventListener('scroll', function(){
+            if (window.pageYOffset > 10) {
+                nav.classList.add('bg-light', 'shadow');
+            } else {
+                nav.classList.remove('bg-light', 'shadow');
+            }
+        });
+    </script>
 
 </body>
 

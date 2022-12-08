@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white py-lg-4 py-3 px-2 shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light py-lg-3 py-3 px-2 fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="/">WPU Blog</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler border-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-justify text-dark fs-1"></i>
         </button>
+        <a class="navbar-brand" href="/">YUDHA<span style="font-family: 'Barlow Semi Condensed', sans-serif; font-weight:100;">Blog</span></a>
         <div class="collapse navbar-collapse text-center" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" style="margin-left: 10px;">
                 <li class="nav-item px-2">
                     <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" href="/">Home</a>
                 </li>
@@ -26,15 +26,13 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-circle"></i>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li class="dropdown-item">{{ auth()->user()->name }}</li>
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                        <ul class="dropdown-menu dropdown-menu-end py-0">
+                            <li class="dropdown-item py-2 border-bottom">{{ auth()->user()->name }}</li>                            
+                            <li><a class="dropdown-item py-2 border-bottom" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>                    
                             <li>
                                 <form action="/logout" method="POST">
                                     @csrf
-                                    <button type="submit" class="dropdown-item">
+                                    <button type="submit" class="btn dropdown-item py-2">
                                         <i class="bi bi-box-arrow-right"></i> Logout
                                     </button>
                                 </form>
@@ -44,7 +42,7 @@
                 @else
                     <li class="nav-item" >
                         <button class="btn btn-dark px-lg-4 px-5 py-lg-0 py-0 my-lg-0 my-2 rounded-0">
-                            <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }} text-white" style="padding: 7px;"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                            <a href="/login" class="nav-link {{ ($active === "login") ? 'active' : '' }} text-white py-1 px-lg-3"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                         </button>
                     </li>
                 @endauth

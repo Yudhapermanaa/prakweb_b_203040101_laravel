@@ -4,21 +4,47 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Yudha Permana">
-        <title>WPU Blog | Dashboard</title>
+        <title>YUDHA Blog | Dashboard</title>
         
 
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+        {{-- Bootstrap Icons --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         
         <!-- Custom styles for this template -->
         <link href="/css/dashboard.css" rel="stylesheet">
+
         {{-- Trix Editor --}}
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
         <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
+        {{-- Font --}}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;400;500;600;700;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amaranth&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
         
         <style>
             trix-toolbar [data-trix-button-group="file-tools"] {
                 display:none;
+            }
+            .title {
+                font-family: 'Barlow Condensed', sans-serif;
+            }
+            .navbar-brand {
+            font-family: 'Amaranth', sans-serif;
+            font-weight: 600;
+            }
+            .nav-item {
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-size: 15.5px;
+            font-weight: 500;
+            }
+            .logout, .alert, .input-group, .my-posts, .new-post, .edit-post, .post, .new-category {
+                font-family: 'Barlow Condensed', sans-serif;
             }
         </style>
 

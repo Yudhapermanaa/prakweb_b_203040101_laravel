@@ -1,12 +1,12 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h2 class="mt-4">Create New Post</h2>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 mb-3 border-bottom">
+        <h2 class="mt-4 title">Create New Post</h2>
     </div>
 
     <div class="col-lg-8">
-        <form method="post" action="/dashboard/posts" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/posts" enctype="multipart/form-data" class="new-post">
             @csrf
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
@@ -57,7 +57,7 @@
                 <input type="hidden" id="body" name="body" value="{{ old('body') }}">
                 <trix-editor input="body" class="rounded-0"></trix-editor>
             </div>
-            <button type="submit" class="btn btn-primary rounded-0 shadow-sm mb-5">Create Post</button>
+            <button type="submit" class="btn btn-primary rounded-0 shadow-sm mb-5 py-1">Create Post</button>
         </form>
     </div>
     <script>

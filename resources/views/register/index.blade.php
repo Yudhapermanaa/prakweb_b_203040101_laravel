@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center mx-2">
     <div class="col-lg-5">
-        <main class="form-registration w-100 m-auto bg-light p-3">
-            <h1 class="h3 mb-3 fw-normal">Registration Form</h1>
+        <main class="form-registration w-100 m-auto bg-light p-3 register shadow">
+            <h1 class="h3 mb-3 fw-normal title">Registration Form</h1>
             <hr class="mb-3">
             <form action="/register" method="POST">
                 @csrf
